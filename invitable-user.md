@@ -122,4 +122,14 @@ Be sure that `enableHttpContex` is `true`:
 
 - - -
 
+## Clientside available components
 
+On the clientside the following components are available (once `InvitableUser` is extended by `Member` model):
+
+- `admin/page-invite`
+- `admin/page-login`
+- `admin/page-member`
+- `admin/page-settings`
+- `admin/page-signup`
+- `admin/page-team`
+- `admin/part-date`
