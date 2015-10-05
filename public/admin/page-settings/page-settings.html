@@ -1,0 +1,55 @@
+<link rel="import" href="../part-sidebar/part-sidebar.html">
+<link rel="import" href="../style-page/style-page.html">
+<link rel="import" href="part-settings-profile.html">
+<link rel="import" href="part-settings-email.html">
+<link rel="import" href="part-settings-password.html">
+
+<dom-module id="page-settings">
+  <template>
+    <style include="style-page"></style>
+
+    <div class="page">
+      <part-sidebar class="sidebar"></part-sidebar>
+      <div class="main">
+        <div class="container">
+          <div id="personal">
+            <h2>Personal</h2>
+            <part-settings-profile user="{{user}}" token="{{route.session.accessToken}}"></part-settings-profile>
+          </div>
+
+          <div id="email">
+            <h2>Change email</h2>
+            <part-settings-email user="{{user}}" token="{{route.session.accessToken}}"></part-settings-email>
+          </div>
+
+          <div id="password">
+            <h2>Change password</h2>
+            <part-settings-password user="{{user}}" token="{{route.session.accessToken}}"></part-settings-password>
+          </div>
+        </div>
+      </div>
+    </app-page>
+
+  </template>
+</dom-module>
+<script>
+  Polymer({
+
+    is: 'page-settings',
+
+    properties: {
+      user: {
+        type: Object
+      },
+      params: {
+        type: Object,
+        value: function () { return {}; }
+      }
+    },
+
+    attached: function () {
+      this.user = this.$.session.get('user');
+    }
+
+  });
+</script>
