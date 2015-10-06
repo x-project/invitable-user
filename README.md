@@ -36,7 +36,7 @@ Add your application roles, row 4:
 var ROLES = ['admin', 'editor', 'author'];
 ```
 
-and modify your default admin information and credentials, row 6 and followings:
+then modify your default admin information and credentials, row 6 and followings:
 
 ```
 var DEFAULT_ADMIN = {
@@ -44,8 +44,14 @@ var DEFAULT_ADMIN = {
   isMainAdmin: true,
   role: 'admin',
   password: '123',
-  email: 'admin@x-journal.com'
+  email: 'admin@x-project.com'
 };
+```
+
+and specify which model extends the `InvitableUser` base model.
+
+```
+var model = 'Member';
 ```
 
 - - -
